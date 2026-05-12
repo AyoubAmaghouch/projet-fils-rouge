@@ -113,37 +113,6 @@ Le site permet la recherche selon :
 
 ---
 
-# 🗄️ Base de Données
-
-## Table `agences`
-
-| Champ | Type |
-|---|---|
-| id | INT |
-| nom | VARCHAR |
-| email | VARCHAR |
-| téléphone | VARCHAR |
-| ville | VARCHAR |
-| adresse | TEXT |
-| description | TEXT |
-| logo | VARCHAR |
-| statut | VARCHAR |
-
----
-
-## Table `voitures`
-
-| Champ | Type |
-|---|---|
-| id | INT |
-| agence_id | INT |
-| marque | VARCHAR |
-| modèle | VARCHAR |
-| année | INT |
-| prix_jour | DECIMAL |
-| image | VARCHAR |
-
----
 
 # 🖥️ Interfaces du Site
 
