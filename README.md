@@ -1,12 +1,11 @@
-# projet-fils-rouge
 # 🚗 Plateforme de Location de Voitures
 
-##  Présentation du Projet
+## 📌 Présentation du Projet
 
-###  Nom du projet
+### 🏷️ Nom du projet
 **Plateforme de Location de Voitures**
 
-###  Description
+### 📝 Description
 Ce projet consiste à développer une plateforme web permettant aux agences de location de voitures de s’inscrire afin de publier leurs services et leurs voitures disponibles à la location.
 
 Chaque agence doit respecter certaines conditions avant d’être validée et affichée sur la plateforme.
@@ -29,7 +28,7 @@ Après validation par l’administrateur, l’agence sera affichée sous forme d
 
 # 👥 Types d’Utilisateurs
 
-##  Administrateur
+## 👨‍💼 Administrateur
 L’administrateur peut :
 - Valider ou refuser les agences
 - Gérer les utilisateurs
@@ -38,7 +37,7 @@ L’administrateur peut :
 
 ---
 
-##  Agence de Location
+## 🏢 Agence de Location
 L’agence peut :
 - Créer un compte
 - Se connecter
@@ -62,9 +61,9 @@ Une fois validée par l’administrateur, l’agence sera visible sur le site.
 
 ---
 
-#  Fonctionnalités Principales
+# ⚙️ Fonctionnalités Principales
 
-##  Inscription des Agences
+## 📝 Inscription des Agences
 L’agence doit remplir :
 - Nom de l’agence
 - Email
@@ -105,7 +104,7 @@ Les agences validées seront affichées sous forme de cartes contenant :
 
 ---
 
-##  Recherche
+## 🔍 Recherche
 
 Le site permet la recherche selon :
 - Ville
@@ -114,47 +113,35 @@ Le site permet la recherche selon :
 
 ---
 
-#  Base de Données
+# 🗄️ Base de Données
 
 ## Table `agences`
 
-CREATE DATABASE location_voitures;
+| Champ | Type |
+|---|---|
+| id | INT |
+| nom | VARCHAR |
+| email | VARCHAR |
+| téléphone | VARCHAR |
+| ville | VARCHAR |
+| adresse | TEXT |
+| description | TEXT |
+| logo | VARCHAR |
+| statut | VARCHAR |
 
-USE location_voitures;
+---
 
--- =====================================
--- TABLE AGENCES
--- =====================================
+## Table `voitures`
 
-CREATE TABLE agences (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    telephone VARCHAR(20) NOT NULL,
-    ville VARCHAR(50) NOT NULL,
-    adresse TEXT NOT NULL,
-    description TEXT NOT NULL,
-    logo VARCHAR(255) NOT NULL,
-    statut VARCHAR(20) DEFAULT 'en attente'
-);
-
--- =====================================
--- TABLE VOITURES
--- =====================================
-
-CREATE TABLE voitures (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    agence_id INT NOT NULL,
-    marque VARCHAR(50) NOT NULL,
-    modele VARCHAR(50) NOT NULL,
-    annee INT NOT NULL,
-    prix_jour DECIMAL(10,2) NOT NULL,
-    image VARCHAR(255) NOT NULL,
-
-    FOREIGN KEY (agence_id)
-    REFERENCES agences(id)
-    ON DELETE CASCADE
-);
+| Champ | Type |
+|---|---|
+| id | INT |
+| agence_id | INT |
+| marque | VARCHAR |
+| modèle | VARCHAR |
+| année | INT |
+| prix_jour | DECIMAL |
+| image | VARCHAR |
 
 ---
 
@@ -170,7 +157,7 @@ CREATE TABLE voitures (
 
 ---
 
-# Technologies Utilisées
+# 🛠️ Technologies Utilisées
 
 - HTML
 - CSS
@@ -182,7 +169,7 @@ CREATE TABLE voitures (
 
 ---
 
-#  Design
+# 🎨 Design
 
 - Interface moderne et responsive
 - Utilisation des cartes Bootstrap
@@ -196,3 +183,6 @@ CREATE TABLE voitures (
 Développer une plateforme web moderne permettant aux agences de location de voitures de publier leurs services et leurs voitures après validation par l’administrateur.
 
 Chaque agence affichera plusieurs voitures avec leurs photos et leurs prix de location par jour dans une interface moderne et professionnelle.
+
+---
+
