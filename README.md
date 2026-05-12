@@ -118,31 +118,43 @@ Le site permet la recherche selon :
 
 ## Table `agences`
 
-| Champ | Type |
-|---|---|
-| id | INT |
-| nom | VARCHAR |
-| email | VARCHAR |
-| téléphone | VARCHAR |
-| ville | VARCHAR |
-| adresse | TEXT |
-| description | TEXT |
-| logo | VARCHAR |
-| statut | VARCHAR |
+CREATE DATABASE location_voitures;
 
----
+USE location_voitures;
 
-## Table `voitures`
+-- =====================================
+-- TABLE AGENCES
+-- =====================================
 
-| Champ | Type |
-|---|---|
-| id | INT |
-| agence_id | INT |
-| marque | VARCHAR |
-| modèle | VARCHAR |
-| année | INT |
-| prix_jour | DECIMAL |
-| image | VARCHAR |
+CREATE TABLE agences (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telephone VARCHAR(20) NOT NULL,
+    ville VARCHAR(50) NOT NULL,
+    adresse TEXT NOT NULL,
+    description TEXT NOT NULL,
+    logo VARCHAR(255) NOT NULL,
+    statut VARCHAR(20) DEFAULT 'en attente'
+);
+
+-- =====================================
+-- TABLE VOITURES
+-- =====================================
+
+CREATE TABLE voitures (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    agence_id INT NOT NULL,
+    marque VARCHAR(50) NOT NULL,
+    modele VARCHAR(50) NOT NULL,
+    annee INT NOT NULL,
+    prix_jour DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+
+    FOREIGN KEY (agence_id)
+    REFERENCES agences(id)
+    ON DELETE CASCADE
+);
 
 ---
 
